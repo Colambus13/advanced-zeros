@@ -1,10 +1,9 @@
 module.exports = function getZerosCount(number, base){
-
     const solutionArr = countZeroes(number, base);
     let zeroCounter = solutionArr[0];
 
-    solutionArr.forEach(function(item){
-        if (item < zeroCounter) {
+    solutionArr.forEach((item) => {
+        if (item < zeroCounter){
             zeroCounter = item;
         }
     });
@@ -12,11 +11,11 @@ module.exports = function getZerosCount(number, base){
 };
 
 const gettingBasePowers = function getBasePrimePowers(numBase){
-    let i = 1,
-        j = 2;
+    let i = 1;
+    let j = 2;
     let baseSystemNotationArray = [];
 
-    while (j < numBase) {
+    while (j < numBase){
         if (numBase % j === 0){
             baseSystemNotationArray[i] = j;
             numBase = numBase / j;
@@ -25,10 +24,11 @@ const gettingBasePowers = function getBasePrimePowers(numBase){
             j++;
         }
     }
-    baseSystemNotationArray[i] = j;
 
+    baseSystemNotationArray[i] = j;
     const baseSystemNotation = {};
-    baseSystemNotationArray.forEach(function(item){
+
+    baseSystemNotationArray.forEach((item) => {
         if (!baseSystemNotation[item]){
             baseSystemNotation[item] = 1;
         }else{
